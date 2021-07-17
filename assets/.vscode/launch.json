@@ -1,0 +1,129 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+                
+                    "type": "lldb",
+                    "request": "launch",
+                    "name": "Debuddddddg",
+                    "program": "${workspaceFolder}/target/debug/<your_binary_name>",
+                    "args": [],
+                    "cwd": "${workspaceFolder}"
+                
+        },
+         {
+                    "type": "lldb",
+                    "request": "launch",
+                    "name": "Debug current example",
+                    "preLaunchTask": "Build current example",
+                    "program": "${workspaceFolder}/target/debug/ecstiles",
+                    "sourceLanguages": [
+                        "rust"
+                    ],
+                    "cwd": "${workspaceFolder}"
+
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'exe'",
+            "cargo": {
+                "args": [
+                    "build"
+                ],
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Cargo launch",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--lib"
+                ]
+            },
+            "program": "${cargo:program}",
+            "args": []
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Cargo launch",
+            "cargo": {
+                "args": [
+                    "build"
+                ]
+            },
+            "program": "${cargo:program}",
+            "args": []
+        },        
+        {
+            "type": "lldb",
+            "name": "test3",
+            "request": "launch",
+            "cargo": {
+                "args": ["test", "--no-run", "--lib"], // Cargo command line to build the debug target
+                // "args": ["build", "--bin=foo"] is another possibility
+                "filter": { // Filter applied to compilation artifacts (optional)
+                    "name": "mylib",
+                    "kind": "lib"
+                }
+            }
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug 'exe'",
+            "cargo": {
+                "args": [
+                    "run",
+                    //"--bin=exe",
+                   // "--package=exe"
+                ],
+                //"filter": {
+                //    "name": "exe",
+                   // "kind": "bin"
+                //}
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug",
+            "program": "${workspaceFolder}/target/debug/ecstiles",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'breakout'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=breakout",
+                    "--package=bevy"
+                ],
+                "filter": {
+                    "name": "breakout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "CARGO_MANIFEST_DIR": "${workspaceFolder}",
+            }
+        },
+
+      
+    ]
+}

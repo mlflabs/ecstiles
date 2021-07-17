@@ -1,0 +1,21 @@
+[package]
+name = "ecstiles"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+bevy = { version = "0.5.0" }
+rand = "0.8"
+#bevy_ecs_tilemap = { version = "0.4.0" }
+bevy_ecs_tilemap = { git = "https://github.com/StarArawn/bevy_ecs_tilemap", branch = "main", features = ["ldtk"]}
+anyhow = { version = "1.0" }
+# bevy = { version = "0.5", default-features = false }
+ldtk_rust = { version = "0.5" }
+morton-encoding = "2.0"
+log = "0.4"
+serde_json = { version = "1.0" }
+
+env_logger = "0.8"
